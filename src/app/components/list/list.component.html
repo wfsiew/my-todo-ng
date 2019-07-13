@@ -1,4 +1,7 @@
-<ul class="list-group">
+<div *ngIf="!list.length" class="alert alert-info">
+  <div class="text-center">Your TO-DO is empty</div>
+</div>
+<ul *ngIf="list.length" class="list-group">
   <li *ngFor="let todo of list" class="list-group-item">
     <div *ngIf="!todo.isEdit" (click)="toggleComplete(todo.id)">
       <div class="mr-2 d-inline" [ngClass]="{ 'completed': todo.completed }">{{todo.title}}</div>
