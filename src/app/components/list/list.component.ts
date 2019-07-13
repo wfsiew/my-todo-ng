@@ -23,26 +23,7 @@ export class ListComponent implements OnInit {
     this.list = this.todoService.getAllTodos();
   }
 
-  removeTodo(id) {
-    this.todoService.deleteTodoById(id);
+  handleOnChange(s: string) {
     this.load();
-  }
-
-  toggleComplete(id) {
-    let todo = this.todoService.getTodoById(id);
-    todo = this.todoService.toggleTodoComplete(todo);
-    this.load();
-  }
-
-  editTodo(id, edit) {
-    let todo = this.todoService.getTodoById(id);
-    todo = this.todoService.setEditTodo(todo, edit);
-  }
-
-  saveTodo(id) {
-    let todo = this.todoService.getTodoById(id);
-    if (!todo.editTitle) return;
-    todo = this.todoService.updateTodoTitle(todo);
-    todo = this.todoService.setEditTodo(todo, false);
   }
 }

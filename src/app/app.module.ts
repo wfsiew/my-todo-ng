@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { InputComponent } from './components/input/input.component';
 import { ListComponent } from './components/list/list.component';
+import { TodoComponent } from './components/todo/todo.component';
 
 import { TodoService } from './services/todo.service';
 
@@ -13,7 +14,8 @@ import { TodoService } from './services/todo.service';
   declarations: [
     AppComponent,
     InputComponent,
-    ListComponent
+    ListComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

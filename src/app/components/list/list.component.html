@@ -1,29 +1,8 @@
 <div *ngIf="!list.length" class="alert alert-info">
-  <div class="text-center">Your TO-DO is empty</div>
+  <div class="text-center">Your TODO is empty</div>
 </div>
 <ul *ngIf="list.length" class="list-group">
   <li *ngFor="let todo of list" class="list-group-item">
-    <div *ngIf="!todo.isEdit" (click)="toggleComplete(todo.id)">
-      <div class="mr-2 d-inline" [ngClass]="{ 'completed': todo.completed }">{{todo.title}}</div>
-      <div class="float-right">
-        <button (click)="removeTodo(todo.id)" class="btn btn-danger mr-2">Delete</button>
-        <button (click)="editTodo(todo.id, true)" class="btn btn-success">Edit</button>
-      </div>
-    </div>
-    <div *ngIf="todo.isEdit" class="row">
-      <div class="col-sm-6">
-        <input 
-          type="text" 
-          (keyup.enter)="saveTodo(todo.id)"
-          [(ngModel)]="todo.editTitle" 
-          placeholder="title" 
-          class="form-control"
-        />
-      </div>
-      <div class="col-sm-4">
-        <button (click)="saveTodo(todo.id)" [disabled]="todo.editTitle === ''" class="btn btn-success mr-2">Save</button>
-        <button (click)="editTodo(todo.id, false)" class="btn btn-secondary">Cancel</button>
-      </div>
-    </div>
+    <app-todo [todo]="todo" (onChange)="handleOnChange($event)"></app-todo>
   </li>
 </ul>
