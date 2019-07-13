@@ -31,7 +31,7 @@ export class InputComponent implements OnInit {
 
   addTodo(event) {
     this.todoService.addTodo(new Todo({
-      title: this.f.todo.value,
+      text: this.f.todo.value,
       completed: false 
     }));
     this.clearInput();
