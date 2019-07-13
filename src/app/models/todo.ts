@@ -1,8 +1,8 @@
 export class Todo {
   id: number;
-  title: string = '';
+  text: string = '';
   completed: boolean = false;
-  editTitle: string = '';
+  editText: string = '';
   isEdit: boolean = false;
 
   constructor(values: Object = {}) {

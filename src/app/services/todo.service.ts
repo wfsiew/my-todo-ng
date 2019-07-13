@@ -72,14 +72,14 @@ export class TodoService {
   setEditTodo(todo: Todo, edit: boolean) {
     let updatedTodo = this.updateTodoById(todo.id, {
       isEdit: edit,
-      editTitle: todo.title,
+      editTitle: todo.text,
     });
     return updatedTodo;
   }
 
   updateTodoTitle(todo: Todo) {
     let updatedTodo = this.updateTodoById(todo.id, {
-      title: todo.editTitle,
+      title: todo.editText,
       editTitle: ''
     });
     return updatedTodo;
