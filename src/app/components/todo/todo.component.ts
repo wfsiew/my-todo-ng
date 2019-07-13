@@ -38,7 +38,7 @@ export class TodoComponent implements OnInit {
   saveTodo(id) {
     let todo = this.todoService.getTodoById(id);
     if (!todo.editText) return;
-    todo = this.todoService.updateTodoTitle(todo);
+    todo = this.todoService.updateTodoText(todo);
     todo = this.todoService.setEditTodo(todo, false);
   }
 }
