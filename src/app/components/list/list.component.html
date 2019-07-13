@@ -18,7 +18,7 @@
         />
       </div>
       <div class="col-sm-4">
-        <button (click)="saveTodo(todo.id)" [disabled]="todo.editTitle == ''" class="btn btn-success mr-2">Save</button>
+        <button (click)="saveTodo(todo.id)" [disabled]="todo.editTitle === ''" class="btn btn-success mr-2">Save</button>
         <button (click)="editTodo(todo.id, false)" class="btn btn-secondary">Cancel</button>
       </div>
     </div>
