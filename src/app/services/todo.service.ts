@@ -27,8 +27,17 @@ export class TodoService {
   }
 
   saveTodo() {
-    localStorage.setItem('ng-lastid', this.lastid.toString());
-    localStorage.setItem('ng-todos', JSON.stringify(this.todos));
+    if (this.todos && this.todos.length) {
+      localStorage.setItem('ng-lastid', this.lastid.toString());
+      localStorage.setItem('ng-todos', JSON.stringify(this.todos));
+    }
+
+    else {
+      this.lastid = 0;
+      this.todos = [];
+      localStorage.setItem('ng-lastid', this.lastid.toString());
+      localStorage.setItem('ng-todos', JSON.stringify(this.todos));
+    }
   }
 
   addTodo(todo: Todo) {
