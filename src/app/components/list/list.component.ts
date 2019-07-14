@@ -20,7 +20,7 @@ export class ListComponent implements OnInit {
   }
 
   load() {
-    this.list = this.todoService.getAllTodos();
+    this.list = this.todoService.getTodos();
   }
 
   handleOnChange(s: string) {

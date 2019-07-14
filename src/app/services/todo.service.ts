@@ -40,7 +40,7 @@ export class TodoService {
     this.saveTodo();
   }
 
-  getAllTodos(): Todo[] {
+  getTodos(): Todo[] {
     this.loadTodo();
     return this.todos;
   }
