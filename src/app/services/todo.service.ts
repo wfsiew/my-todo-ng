@@ -12,23 +12,23 @@ export class TodoService {
   constructor() { }
 
   loadTodo() {
-    let list = localStorage.getItem('todos');
-    let lastid = localStorage.getItem('lastid');
+    let list = localStorage.getItem('ng-todos');
+    let id = localStorage.getItem('ng-lastid');
 
-    if (!lastid) {
+    if (!id) {
       this.todos = [];
       this.lastid = 0;
     }
 
     else {
       this.todos = JSON.parse(list);
-      this.lastid = parseInt(lastid);
+      this.lastid = parseInt(id);
     }
   }
 
   saveTodo() {
-    localStorage.setItem('lastid', this.lastid.toString());
-    localStorage.setItem('todos', JSON.stringify(this.todos));
+    localStorage.setItem('ng-lastid', this.lastid.toString());
+    localStorage.setItem('ng-todos', JSON.stringify(this.todos));
   }
 
   addTodo(todo: Todo) {
